@@ -122,6 +122,11 @@ module.exports = function(webpackEnv) {
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
             postcssNormalize(),
+            ...[
+              process.env.REACT_APP_OLO_POSTCSS_IMPORT &&
+                require('postcss-import'),
+              process.env.REACT_APP_OLO_TAILWIND && require('tailwindcss'),
+            ].filter(Boolean),
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
@@ -270,8 +275,8 @@ module.exports = function(webpackEnv) {
               : false,
           },
           cssProcessorPluginOptions: {
-              preset: ['default', { minifyFontValues: { removeQuotes: false } }]
-          }
+            preset: ['default', { minifyFontValues: { removeQuotes: false } }],
+          },
         }),
       ],
       // Automatically split vendor and commons
