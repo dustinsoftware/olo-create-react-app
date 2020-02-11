@@ -1,6 +1,6 @@
 {
   "name": "olo-react-scripts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Olo-customized scripts for building React apps. Forked from create-react-app",
   "repository": {
     "type": "git",
