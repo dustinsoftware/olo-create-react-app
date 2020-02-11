@@ -1,5 +1,9 @@
 # Customization Changelog
 
+## 0.0.4
+
+- Fixed building CSS module bundle in development mode
+
 ## 0.0.3
 
 - Added REACT_APP_OLO_DEVELOPMENT to support generating bundles without SHAs for fast local development
